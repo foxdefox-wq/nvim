@@ -1,21 +1,17 @@
 return {
-  -- Add the ayu theme plugin
   {
-    "Shatur/neovim-ayu",
-    name = "ayu",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      -- Optional: Configure ayu here if you want specific options
-      -- require('ayu').setup({ overrides = {} })
-    end,
-  },
-
-  -- Configure LazyVim to load the colorscheme
-  {
-    "LazyVim/LazyVim",
+    "rebelot/kanagawa.nvim",
+    lazy = false, -- Load this during startup
+    priority = 1000, -- Load this before other plugins
     opts = {
-      colorscheme = "ayu-dark",
+      theme = "wave", -- Options: "wave", "dragon", "lotus"
+      background = {
+        dark = "wave", -- "wave" is the best for that professional IDE look
+      },
     },
+    config = function(_, opts)
+      require("kanagawa").setup(opts)
+      vim.cmd("colorscheme kanagawa")
+    end,
   },
 }
