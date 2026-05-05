@@ -4,3 +4,4 @@
 vim.g.nvim_tree_respect_buf_cwd = 1
 vim.g.root_spec = { "cwd" }
 vim.o.autochdir = false
+vim.g.snacks_animate = false

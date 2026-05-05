@@ -1,18 +1,15 @@
 return {
   "folke/snacks.nvim",
-  opts = {
-    picker = {
-      sources = {
-        files = {
-          cwd = true,
-        },
-        grep = {
-          cwd = true,
-        },
-      },
+  opts = function(_, opts)
+    opts.picker = opts.picker or {}
+    opts.picker.sources = opts.picker.sources or {}
 
-      -- 🔥 THIS is the important global switch
-      follow_cwd = true,
-    },
-  },
+    opts.picker.sources.grep = opts.picker.sources.grep or {}
+    opts.picker.sources.grep.args = {
+      "-u",
+      "--hidden",
+    }
+
+    return opts
+  end,
 }
