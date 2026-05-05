@@ -15,9 +15,13 @@ return {
           path = "C:/Program Files/Eclipse Adoptium/jdk-8.0.482.8-hotspot",
         },
         {
+          name = "JavaSE-25",
+          path = "C:/Program Files/Eclipse Adoptium/jdk-25.0.3.9-hotspot",
+          default = true,
+        },
+        {
           name = "JavaSE-21",
           path = "C:/Program Files/Eclipse Adoptium/jdk-21.0.11.10-hotspot",
-          default = true,
         },
       }
     end
