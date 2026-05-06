@@ -1,9 +1,17 @@
 return {
-  "tinted-theming/tinted-nvim",
-  priority = 1000, -- load colorscheme early
-  lazy = false, -- apply on startup
+  "folke/tokyonight.nvim",
+  lazy = false, -- Load immediately
+  priority = 1000, -- Load before all other plugins
   opts = {
-    default_scheme = "base24-papercolor-dark", -- pick any bundled Base16/Base24
-    compile = true, -- optional: precompile for faster startup
+    style = "night", -- Set to 'night', 'storm', 'moon', or 'day'
+    transparent = false, -- Enable to disable setting the background color
+    styles = {
+      sidebars = "transparent", -- style for sidebars
+      floats = "transparent", -- style for floating windows
+    },
   },
+  config = function(_, opts)
+    require("tokyonight").setup(opts)
+    vim.cmd.colorscheme("tokyonight-night")
+  end,
 }
