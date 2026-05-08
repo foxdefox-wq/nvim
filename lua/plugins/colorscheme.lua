@@ -1,5 +1,5 @@
 return {
-  "folke/tokyonight.nvim",
+  "nickkadutskyi/jb.nvim",
   lazy = false, -- Load immediately
   priority = 1000, -- Load before all other plugins
   opts = {
@@ -12,6 +12,6 @@ return {
   },
   config = function(_, opts)
     require("tokyonight").setup(opts)
-    vim.cmd.colorscheme("tokyonight-night")
+    vim.cmd.colorscheme("jb")
   end,
 }
