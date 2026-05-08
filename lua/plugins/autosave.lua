@@ -3,9 +3,9 @@ return {
   config = function()
     require("auto-save").setup({
       enabled = true,
-      trigger_events = { "InsertLeave", "TextChanged" }, -- Events that trigger save
-      debounce_delay = 5000, -- Delay in ms
-      cleaning_interval = 10000,
+      trigger_events = { "BufLeave", "TextChanged" },
+      debounce_delay = 3000,
+      cleaning_interval = 1000,
     })
   end,
 }
