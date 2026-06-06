@@ -1,3 +1,4 @@
+-- Needs to be off
 return {
   "mason-org/mason-lspconfig.nvim",
   dependencies = { "mason-org/mason.nvim", "lopi-py/luau-lsp.nvim" },
