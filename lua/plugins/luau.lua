@@ -11,6 +11,21 @@ return {
       end,
       once = true,
     })
+    vim.lsp.config("luau-lsp", {
+      settings = {
+        ["luau-lsp"] = {
+          completion = {
+            fillCallArguments = true,
+          },
+          inlayHints = {
+            parameterNames = "literals",
+            functionReturnTypes = true,
+            variableTypes = true,
+            parameterTypes = true,
+          },
+        },
+      },
+    })
     require("luau-lsp").setup({
       platform = { type = "roblox" },
       sourcemap = {
