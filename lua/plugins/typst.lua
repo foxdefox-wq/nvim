@@ -1,5 +1,3 @@
--- typst.lua
-
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "typst",
   callback = function()
@@ -17,10 +15,16 @@ return {
     },
     config = function(_, opts)
       require("typst-preview").setup(opts)
-      vim.api.nvim_create_autocmd("BufEnter", {
+      vim.api.nvim_create_autocmd("BufReadPost", {
         pattern = "*.typ",
         callback = function()
           vim.cmd("TypstPreview")
+        end,
+      })
+      vim.api.nvim_create_autocmd("BufUnload", {
+        pattern = "*.typ",
+        callback = function()
+          vim.cmd("TypstPreviewStop")
         end,
       })
     end,
