@@ -11,7 +11,7 @@ return {
     lazy = false,
     version = "1.*",
     opts = {
-      invert_colors = "always",
+      invert_colors = "never",
     },
     config = function(_, opts)
       require("typst-preview").setup(opts)
@@ -28,5 +28,15 @@ return {
         end,
       })
     end,
+  },
+  {
+    "stevearc/conform.nvim",
+    event = { "BufWritePre" },
+    cmd = { "ConformInfo" },
+    opts = {
+      formatters_by_ft = {
+        typst = { "typstyle" },
+      },
+    },
   },
 }
